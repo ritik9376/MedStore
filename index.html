@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedStore - Online Pharmacy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <h1><i class="fas fa-pills"></i> MedStore</h1>
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="main-nav">
+            <ul>
+                <li><a href="#products">Medicines</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#health-packages">Health Packages</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <input type="text" class="search-bar" placeholder="Search medicines...">
+            <a href="#" id="cart-icon"><i class="fas fa-shopping-cart"></i></a>
+            <span class="cart-counter" id="cart-count">0</span> <!-- Cart counter -->
+            <div class="login-signup">
+                <a href="login.html"><i class="fas fa-user"></i> Login</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1>𝓨𝓸𝓾𝓻 𝓗𝓮𝓪𝓵𝓽𝓱, 𝓞𝓾𝓻 𝓟𝓻𝓲𝓸𝓻𝓲𝓽𝔂</h1>
+            <p><b>Get medicines delivered to your doorstep</b></p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn primary-btn">Shop Now</a>
+            </div>
+        </div>
+    </div>
+
+    <section id="categories" class="categories-section">
+        <h2>Shop by Categories</h2>
+        <div class="categories-container">
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-capsules"></i></div>
+                <h3>Medicines</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-heartbeat"></i></div>
+                <h3>Healthcare</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-stethoscope"></i></div>
+                <h3>Medical Devices</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-dna"></i></div>
+                <h3>Lab Tests</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-spa"></i></div>
+                <h3>Ayurveda</h3>
+            </div>
+            <div class="category-card">
+                <div class="category-icon"><i class="fas fa-baby"></i></div>
+                <h3>Baby Care</h3>
+            </div>
+        </div>
+    </section>
+
+  
+
+    <section id="products">
+        <h2>Popular Medicines</h2>
+        
+        <div class="genre-filter" id="genre-filter">
+            <button class="filter-btn active" data-genre="all">All</button>
+            <button class="filter-btn" data-genre="fever">Fever & Pain</button>
+            <button class="filter-btn" data-genre="diabetes">Diabetes Care</button>
+            <button class="filter-btn" data-genre="cardiac">Cardiac Care</button>
+            <button class="filter-btn" data-genre="stomach">Stomach Care</button>
+            <button class="filter-btn" data-genre="vitamins">Vitamins</button>
+            <button class="filter-btn" data-genre="skincare">Skin Care</button>
+        </div>
+        
+        <div class="product-list" id="product-list">
+            <!-- Fever & Pain Medicines -->
+            <div class="product" data-genre="fever">
+                <div class="product-badge">20% OFF</div>
+                <img src="https://img1.exportersindia.com/product_images/bc-full/2023/9/2987620/dolo-tablet-1673698579-6719587.jpg" alt="Dolo 650">
+                <h3>Dolo 650mg Tablet</h3>
+                <p>Paracetamol for fever and mild to moderate pain relief</p>
+                <div class="product-meta">
+                    <span class="product-company">Micro Labs Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹30.00</span>
+                    <span class="discounted-price">₹24.00</span>
+                </div>
+                <button class="add-to-cart" data-price="24">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="fever">
+                <img src="https://www.crocin.com/content/dam/cf-consumer-healthcare/panadol-reborn/en_IN/product-detail/380x463/Crocin-Advance-Pack_20May22-380x463.png" alt="Crocin Advance">
+                <h3>Crocin Advance Tablet</h3>
+                <p>Fast relief from headache, fever and body pain</p>
+                <div class="product-meta">
+                    <span class="product-company">GSK Pharmaceuticals</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹49.00</span>
+                <button class="add-to-cart" data-price="49">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="fever">
+                <div class="product-badge">10% OFF</div>
+                <img src="https://images.jdmagicbox.com/quickquotes/images_main/sanofi-combiflam-plus-tablet-650-mg-4-tblt-250148762-bnejowtm.jpg" alt="Combiflam">
+                <h3>Combiflam Tablet</h3>
+                <p>Combination of Ibuprofen and Paracetamol for pain relief</p>
+                <div class="product-meta">
+                    <span class="product-company">Sanofi India Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹39.00</span>
+                    <span class="discounted-price">₹35.10</span>
+                </div>
+                <button class="add-to-cart" data-price="35.10">Add to Cart</button>
+            </div>
+            
+            <!-- Diabetes Care -->
+            <div class="product" data-genre="diabetes">
+                <img src="https://cdn01.pharmeasy.in/dam/products_otc/D97429/accu-chek-active-50-test-strips-2-packs-of-softclix-lancet-25-2-1671742432.jpg" alt="Accu-Chek Active">
+                <h3>Accu-Chek Active Test Strips</h3>
+                <p>Blood glucose monitoring strips, pack of 50</p>
+                <div class="product-meta">
+                    <span class="product-company">Roche Diabetes Care</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹849.00</span>
+                <button class="add-to-cart" data-price="849">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="diabetes">
+                <div class="product-badge">15% OFF</div>
+                <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/energy-sport-drink-mix/v/u/q/-original-imahyyg65vzqcyep.jpeg?q=90&crop=false" alt="Glucon-D">
+                <h3>Glucon-D Orange Powder</h3>
+                <p>Instant energy glucose powder, 450g jar</p>
+                <div class="product-meta">
+                    <span class="product-company">Heinz India Pvt Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹199.00</span>
+                    <span class="discounted-price">₹169.15</span>
+                </div>
+                <button class="add-to-cart" data-price="169.15">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="diabetes">
+                <img src="https://cdn.fcglcdn.com/brainbees/images/products/583x720/15734319a.webp" alt="Dr. Morepen Gluco One">
+                <h3>Dr. Morepen Gluco One Test Strips</h3>
+                <p>Blood glucose test strips, pack of 50</p>
+                <div class="product-meta">
+                    <span class="product-company">Morepen Laboratories</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹799.00</span>
+                <button class="add-to-cart" data-price="799">Add to Cart</button>
+            </div>
+            
+            <!-- Cardiac Care -->
+            <div class="product" data-genre="cardiac">
+                <img src="https://assets.truemeds.in/Images/ProductImage/TM-TACR1-012747/ecosprin-gold-10-capsule-15_ecosprin-gold-10-capsule-15--TM-TACR1-012747_1.png" alt="Ecosprin">
+                <h3>Ecosprin 75mg Tablet</h3>
+                <p>Aspirin tablet for prevention of blood clots</p>
+                <div class="product-meta">
+                    <span class="product-company">USV Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹5.90</span>
+                <button class="add-to-cart" data-price="5.90">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="cardiac">
+                <div class="product-badge">5% OFF</div>
+                <img src="https://images.apollo247.in/pub/media/catalog/product/C/L/CLO0051_1_1.jpg" alt="Clopitab">
+                <h3>Clopitab 75mg Tablet</h3>
+                <p>Prevents formation of harmful blood clots</p>
+                <div class="product-meta">
+                    <span class="product-company">Sun Pharmaceutical Industries Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹85.00</span>
+                    <span class="discounted-price">₹80.75</span>
+                </div>
+                <button class="add-to-cart" data-price="80.75">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="cardiac">
+                <img src="https://assets.truemeds.in/Images/ProductImage/TM-TACR1-038772/telma-40-tablet-15_telma-40-tablet-15--TM-TACR1-038772_1.png?width=320" alt="Telma">
+                <h3>Telma 40mg Tablet</h3>
+                <p>Treatment of hypertension and heart failure</p>
+                <div class="product-meta">
+                    <span class="product-company">Glenmark Pharmaceuticals Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹120.00</span>
+                <button class="add-to-cart" data-price="120">Add to Cart</button>
+            </div>
+            
+            <!-- Stomach Care -->
+            <div class="product" data-genre="stomach">
+                <div class="product-badge">25% OFF</div>
+                <img src="https://storage.googleapis.com/dawaadost.appspot.com/main_images/8ac6d548-eb07-454f-ba54-50a2f16d4dc4.jpg" alt="Digene">
+                <h3>Digene Tablet Mint Flavour</h3>
+                <p>Relief from acidity and gas, pack of 15</p>
+                <div class="product-meta">
+                    <span class="product-company">Abbott India Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹40.00</span>
+                    <span class="discounted-price">₹30.00</span>
+                </div>
+                <button class="add-to-cart" data-price="30">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="stomach">
+                <img src="https://omhealthcart.com/media/catalog/product/cache/1/small_image/9df78eab33525d08d6e5fb8d27136e95/e/n/en.jpg" alt="ENO">
+                <h3>ENO Fruit Salt Lemon Flavour</h3>
+                <p>Fast relief from acidity, 100g powder</p>
+                <div class="product-meta">
+                    <span class="product-company">GSK Consumer Healthcare</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹85.00</span>
+                <button class="add-to-cart" data-price="85">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="stomach">
+                <img src="https://res.cloudinary.com/pasumai-pharmacy/image/upload/product2/Pantocid-40-mg-Tablet.jpg" alt="Pantocid">
+                <h3>Pantocid 40mg Tablet</h3>
+                <p>Treatment of acidity, heartburn and ulcers</p>
+                <div class="product-meta">
+                    <span class="product-company">Sun Pharmaceutical Industries Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-prescription"></i> Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹110.00</span>
+                <button class="add-to-cart" data-price="110">Add to Cart</button>
+            </div>
+            
+            <!-- Vitamins -->
+            <div class="product" data-genre="vitamins">
+                <div class="product-badge">10% OFF</div>
+                <img src="https://m.media-amazon.com/images/I/81FAXKwKpgL.jpg" alt="Revital H">
+                <h3>Revital H Capsule</h3>
+                <p>Daily health supplement with multivitamins and minerals</p>
+                <div class="product-meta">
+                    <span class="product-company">Sun Pharmaceutical Industries Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹110.00</span>
+                    <span class="discounted-price">₹99.00</span>
+                </div>
+                <button class="add-to-cart" data-price="99">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="vitamins">
+                <img src="https://www.netmeds.com/images/product-v1/600x600/22507/becadexamin_capsule_30s_34131_0_1.jpg" alt="Becadexamin">
+                <h3>Becadexamin Capsule</h3>
+                <p>Multivitamin supplement, pack of 20</p>
+                <div class="product-meta">
+                    <span class="product-company">Glaxo SmithKline Pharmaceuticals Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹75.00</span>
+                <button class="add-to-cart" data-price="75">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="vitamins">
+                <div class="product-badge">15% OFF</div>
+                <img src="https://zeelabpharmacy.com/public/uploads/other_brand_image/Zee675049db3a318.jpeg" alt="Shelcal">
+                <h3>Shelcal 500mg Tablet</h3>
+                <p>Calcium supplement for bone health</p>
+                <div class="product-meta">
+                    <span class="product-company">Torrent Pharmaceuticals Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹131.00</span>
+                    <span class="discounted-price">₹111.35</span>
+                </div>
+                <button class="add-to-cart" data-price="111.35">Add to Cart</button>
+            </div>
+            
+            <!-- Skin Care -->
+            <div class="product" data-genre="skincare">
+                <img src="https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/20807650/2024/2/15/d6b14c41-8274-4ec8-94f4-1ffd5228c40e1707988524850-Himalaya-Set-of-2-Purifying-Neem-Face-Wash-for-Acne-Prone-Sk-1.jpg" alt="Himalaya Neem Face Wash">
+                <h3>Himalaya Purifying Neem Face Wash</h3>
+                <p>Antibacterial face wash for acne-prone skin, 150ml</p>
+                <div class="product-meta">
+                    <span class="product-company">Himalaya Drug Company</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹135.00</span>
+                <button class="add-to-cart" data-price="135">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="skincare">
+                <div class="product-badge">20% OFF</div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdt3S6doRpXT9XVTKt6KB_zZrVvphTkqQwfw&s" alt="Cetaphil">
+                <h3>Cetaphil Gentle Skin Cleanser</h3>
+                <p>Mild, non-irritating cleanser for sensitive skin, 250ml</p>
+                <div class="product-meta">
+                    <span class="product-company">Galderma India Pvt Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <div class="product-price">
+                    <span class="original-price">₹450.00</span>
+                    <span class="discounted-price">₹360.00</span>
+                </div>
+                <button class="add-to-cart" data-price="360">Add to Cart</button>
+            </div>
+            <div class="product" data-genre="skincare">
+                <img src="https://wellify.in/cdn/shop/files/1st-Tile01.jpg?v=1692186610" alt="Lacto Calamine">
+                <h3>Lacto Calamine Lotion</h3>
+                <p>Oil control lotion for normal to oily skin, 120ml</p>
+                <div class="product-meta">
+                    <span class="product-company">Piramal Healthcare Ltd</span>
+                    <span class="product-prescription"><i class="fas fa-check-circle"></i> No Prescription Required</span>
+                </div>
+                <span class="discounted-price">₹175.00</span>
+                <button class="add-to-cart" data-price="175">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="health-packages" class="health-packages-section">
+        <h2>Health Packages</h2>
+        <div class="packages-container">
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Basic Health Checkup</h3>
+                    <span class="package-price">₹999</span>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Complete Blood Count</li>
+                        <li><i class="fas fa-check"></i> Liver Function Test</li>
+                        <li><i class="fas fa-check"></i> Kidney Function Test</li>
+                        <li><i class="fas fa-check"></i> Blood Sugar Fasting</li>
+                        <li><i class="fas fa-check"></i> Lipid Profile</li>
+                    </ul>
+                    <button class="btn primary-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="package-card featured">
+                <div class="package-badge">Popular</div>
+                <div class="package-header">
+                    <h3>Comprehensive Health Checkup</h3>
+                    <span class="package-price">₹2499</span>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> All Basic Health Checkup Tests</li>
+                        <li><i class="fas fa-check"></i> Thyroid Profile</li>
+                        <li><i class="fas fa-check"></i> Vitamin D, B12 & Folate</li>
+                        <li><i class="fas fa-check"></i> HbA1c</li>
+                        <li><i class="fas fa-check"></i> Chest X-Ray</li>
+                        <li><i class="fas fa-check"></i> ECG</li>
+                        <li><i class="fas fa-check"></i> Doctor Consultation</li>
+                    </ul>
+                    <button class="btn primary-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <div class="package-header">
+                    <h3>Diabetes Care Package</h3>
+                    <span class="package-price">₹1499</span>
+                </div>
+                <div class="package-body">
+                    <ul class="package-features">
+                        <li><i class="fas fa-check"></i> Blood Sugar Fasting & PP</li>
+                        <li><i class="fas fa-check"></i> HbA1c</li>
+                        <li><i class="fas fa-check"></i> Kidney Function Test</li>
+                        <li><i class="fas fa-check"></i> Lipid Profile</li>
+                        <li><i class="fas fa-check"></i> Urine Routine</li>
+                        <li><i class="fas fa-check"></i> Doctor Consultation</li>
+                    </ul>
+                    <button class="btn primary-btn">Book Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+       
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical Lane, Pharma City</p>
+                <p><i class="fas fa-phone"></i> +91 9354652476</p>
+                <p><i class="fas fa-envelope"></i> care@medstore.com</p>
+                <p><i class="fas fa-clock"></i> Monday - Saturday: 8:00 AM - 10:00 PM</p>
+                <p><i class="fas fa-clock"></i> Sunday: 9:00 AM - 8:00 PM</p>
+                <div class="social-icons">
+                    <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                
+                   
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <div class="about-container" id="about">
+        <div class="about-header">
+            <h1>About MedStore</h1>
+        </div>
+
+        <div class="about-content">
+            <p>Welcome to MedStore, your trusted online pharmacy! We provide high-quality medicines and healthcare products that are perfect for all your medical needs. Our mission is to make healthcare accessible and affordable through our carefully curated collection of medicines.</p>
+            <p>At MedStore, we believe in the power of quality healthcare to transform lives. We source our medicines from reputable pharmaceutical companies, ensuring that our products meet the highest standards of quality and safety.</p>
+            <p>Thank you for choosing MedStore! We aim to create the best online pharmacy experience with timely delivery, genuine products, and excellent customer service.</p>
+        </div>
+
+        <div class="about-features">
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+                <h3>Fast Delivery</h3>
+                <p>Medicines delivered to your doorstep within 24-48 hours</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-certificate"></i></div>
+                <h3>Genuine Products</h3>
+                <p>100% authentic medicines from authorized distributors</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon"><i class="fas fa-tags"></i></div>
+                <h3>Best Prices</h3>
+                <p>Competitive prices with regular discounts and offers</p>
+            </div>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://wa.me/9354652476" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://www.facebook.com/medstore" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/medstore" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-amount">₹0.00</span></p>
+            </div>
+            <div class="cart-actions">
+                <button id="checkout-btn" class="btn primary-btn">Proceed to Checkout</button>
+                <button id="continue-shopping" class="btn secondary-btn">Continue Shopping</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Purchase History Modal -->
+    <div id="history-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Your Order History</h2>
+            <div id="purchase-history">
+                <!-- Purchase history will be added here dynamically -->
+            </div>
+            <button id="clear-history-btn" class="btn secondary-btn">Clear History</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>MedStore</h3>
+                <p>Your trusted online pharmacy for all healthcare needs.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#products">Medicines</a></li>
+                    <li><a href="#health-packages">Health Packages</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Fever & Pain</a></li>
+                    <li><a href="#">Diabetes Care</a></li>
+                    <li><a href="#">Cardiac Care</a></li>
+                    <li><a href="#">Stomach Care</a></li>
+                    <li><a href="#">Vitamins & Supplements</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Health Street, Medical Lane, Pharma City</p>
+                <p><i class="fas fa-phone"></i> +91 9354652476</p>
+                <p><i class="fas fa-envelope"></i> care@medstore.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 MedStore. All Rights Reserved.</p>
+            <div class="footer-payment">
+                <span>We Accept:</span>
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

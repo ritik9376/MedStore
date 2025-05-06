@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Portal</title>
+  <style>
+   body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('https://www.mua.edu/uploads/sites/10/2023/02/allopathic-medicine.webp?w=1536') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+    h1 {
+      font-family: 'Segoe UI', sans-serif;
+      color: #f5da45;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 48px;
+    }
+
+    .top-buttons {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .top-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .top-buttons button.active {
+      background-color: #f39509;
+    }
+
+    .form-container, .login-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 0 auto 20px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 1.1);
+      display: none;
+    }
+
+    input {
+      padding: 10px;
+      margin: 8px 5px;
+      font-size: 16px;
+      width: calc(100% - 22px);
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button[type="submit"] {
+      padding: 10px 20px;
+      margin-top: 10px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1>𝖜𝖊𝖑𝖈𝖔𝖒𝖊</h1>
+
+  <div class="top-buttons">
+    <button id="showUserFormBtn" class="active" onclick="toggleForm('user')">Enter User Info</button>
+    <button id="showLoginFormBtn" onclick="toggleForm('login')">Admin Login</button>
+  </div>
+
+  <div class="form-container" id="userFormContainer">
+    <form id="userForm" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="access_key" value="1868f870-ca75-43c1-bccb-0a7269610972">
+      <input type="text" name="name" id="name" placeholder="Your Name" required><br>
+      <input type="email" name="email" id="email" placeholder="Your Email" required><br>
+      <input type="number" name="phone" id="phone" placeholder="Enter phone" required><br>
+      <input type="password" name="pass" id="password" placeholder="Enter password" required><br>
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="login-container" id="loginFormContainer">
+    <form onsubmit="return login()">
+      <input type="text" id="adminUser" placeholder="Username" required><br>
+      <input type="password" id="adminPass" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function toggleForm(form) {
+      const userForm = document.getElementById("userFormContainer");
+      const loginForm = document.getElementById("loginFormContainer");
+      const btnUser = document.getElementById("showUserFormBtn");
+      const btnLogin = document.getElementById("showLoginFormBtn");
+
+      if (form === 'user') {
+        userForm.style.display = 'block';
+        loginForm.style.display = 'none';
+        btnUser.classList.add("active");
+        btnLogin.classList.remove("active");
+      } else {
+        userForm.style.display = 'none';
+        loginForm.style.display = 'block';
+        btnUser.classList.remove("active");
+        btnLogin.classList.add("active");
+      }
+    }
+
+    window.onload = () => toggleForm('user');
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("userForm");
+      const formData = new FormData(form);
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert("Data submitted successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        console.error("Error:", error);
+        alert("There was an error submitting the form.");
+      });
+    }
+
+    const users = [
+      { username: 'ritikkumarchaudhary9376@gmail.com', password: 'admin123', redirect: 'database.html' },
+      { username: 'ritik', password: 'admin23', redirect: 'user-dashboard.html' },
+      { username: 'ram', password: 'admin3', redirect: 'index.html' },
+      { username: 'ritikram', password: '1111', redirect: 'index.html' },
+      { username: 'cb', password: 'idont', redirect: 'index.html' }
+    ];
+
+    function login() {
+      const userInput = document.getElementById('adminUser').value.trim();
+      const passInput = document.getElementById('adminPass').value;
+
+      const user = users.find(u => u.username === userInput && u.password === passInput);
+
+      if (user) {
+        alert("Login successful!");
+        window.location.href = user.redirect;
+      } else {
+        alert('Invalid credentials');
+      }
+
+      return false;
+    }
+  </script>
+</body>
+</html>

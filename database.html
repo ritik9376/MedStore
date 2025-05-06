@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login + Table View</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://www.narconon.org/FURL/imagecache/cropfit@w=710/blob/images/articles/b/9/b9a23d72-8196-11e9-8472-42010a800095/doctor-giving-different-drugs.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      width: 300px;
+      margin-top: 60px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4a3f35;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #6b4f3f;
+    }
+
+    table {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 900px;
+      background-color: white;
+      border-collapse: collapse;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+
+    th {
+      background-color: #4a3f35;
+      color: white;
+    }
+
+    td {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <h2>Admin</h2>
+    <form onsubmit="return login()">
+      <input type="text" id="adminUser" placeholder="Username" required>
+      <input type="password" id="adminPass" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <table id="user-table" style="display: none;">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Password</th> <!-- New column -->
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <!-- Rows added by JavaScript -->
+    </tbody>
+  </table>
+
+  <script>
+    const users = [
+    { id: 1, username: 'admin', email: 'ritikkumarchaudhary9376@gmail.com', role: 'Admin', password: 'admin123' },
+      { id: 2, username: 'ritik', email: 'ritik@example.com', role: 'User', password: 'admin23' },
+      { id: 3, username: 'cb', email: 'cb@example.com', role: 'User', password: 'idont' },
+      { id: 4, username: 'ram', email: 'ramikkumarchaudhary9376@gmail.com', role: 'user', password: 'ram123' }
+    ];
+  
+    function login() {
+      const user = document.getElementById('adminUser').value;
+      const pass = document.getElementById('adminPass').value;
+  
+      // Check if credentials are valid
+      if (user === 'ritikkumarchaudhary9376@gmail.com' && pass === 'admin123') {
+        document.querySelector('.login-container').style.display = 'none';
+        document.getElementById('user-table').style.display = 'table';
+        populateTable();
+        return false;
+      }
+
+      alert('Invalid credentials');
+      return false;
+    }
+  
+    function populateTable() {
+      const tbody = document.getElementById('table-body');
+      tbody.innerHTML = '';
+  
+      users.forEach(user => {
+        const row = `<tr>
+          <td>${user.id}</td>
+          <td>${user.username}</td>
+          <td>${user.email}</td>
+          <td>${user.role}</td>
+          <td>${user.password}</td> <!-- Display password -->
+        </tr>`;
+        tbody.innerHTML += row;
+      });
+    }
+  </script>
+
+</body>
+</html>
